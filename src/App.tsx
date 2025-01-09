@@ -3,6 +3,8 @@ import {Navbar} from "./components/navbar";
 import {createBrowserRouter, Outlet, RouterProvider} from "react-router-dom";
 import {HomePage} from "./pages/home-page";
 import {OrgPage} from "./pages/org-page";
+import {QueryClient, QueryClientProvider} from "@tanstack/react-query";
+import {ReactQueryDevtools} from "@tanstack/react-query-devtools";
 
 const router = createBrowserRouter([
     {
@@ -29,7 +31,10 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
-    return <RouterProvider router={router} />
+    return <QueryClientProvider client={new QueryClient()}>
+        <RouterProvider router={router} />
+        <ReactQueryDevtools />
+    </QueryClientProvider>
 }
 
 export default App;

@@ -2,13 +2,20 @@ import {Button} from "./ui/button";
 import {Link} from "react-router-dom";
 import {Building, MoonStar, Sun} from "lucide-react";
 import {useColorScheme} from "../lib/color-scheme";
+import {_resetApiClientData} from "../data/mock-backend";
+import {useOrg} from "../lib/hooks/use-org";
 
 export function Navbar () {
     const { isDark, setIsDark } = useColorScheme();
+    const { refetchOrg } = useOrg();
 
     function toggleDarkMode() {
-        console.log("toggle dark mode");
         setIsDark(!isDark);
+    }
+
+    function resetData () {
+        _resetApiClientData();
+        void refetchOrg();
     }
 
     return <div className={"animate-in slide-in-from-top-2 fade-in duration-300"}>
@@ -34,6 +41,12 @@ export function Navbar () {
                     </Button>
                 </div>
                 <div className={"flex gap-4 items-center"}>
+                    <Button
+                        variant={"ghost"}
+                        className={"hover:text-destructive transition-all hover:bg-red-800/15"}
+                        size={"sm"}
+                        onClick={resetData}
+                    >reset data</Button>
                     <Button variant={"ghost"} onClick={toggleDarkMode}>
                         { isDark && <Sun /> }
                         { !isDark && <MoonStar /> }

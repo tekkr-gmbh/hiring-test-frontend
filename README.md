@@ -1,46 +1,47 @@
-# Getting Started with Create React App
+# Tekkr Coding Challenge
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Getting Started
 
-## Available Scripts
+### Setup
 
-In the project directory, you can run:
+This repository has everything in place that you need to get started quickly.
+You need to:
+- Install Node.js
+- Run `npm start` - this should launch the application in your browser, otherwise it's available at [http://localhost:3000](http://localhost:3000)
 
-### `npm start`
+### The Application
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+The app that you will be working on is a very stripped down version of Tekkr's actual product.
+It consists of a home page (with some dummy links to playbooks) and an organization page used to manage the organization in an account.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+At the top, there's a navigation bar that allows you to navigate the two pages, switch dark/light mode or reset the data of the application.
 
-### `npm test`
+![Screenshot: Home Page](./docs/home.png)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## The Challenge
 
-### `npm run build`
+### Your task
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+On the organisation page, there is a button that says "Add Member", currently nothing happens when you click it but your job is to implement the dialog window that opens when the button is clicked.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+You can find the todo-list item describing what's needed on this page: [https://tekkr.notion.site/hiring-challenge-ticket?pvs=4](https://tekkr.notion.site/hiring-challenge-ticket?pvs=4)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The "backend" for creating users already exists.
+There is a singleton called `apiClient` that has a function called `createUser` - use this function to create the member when the *Save* button is pressed.
+You should treat this as the backend for the application and assume that it talks to a remote server.
 
-### `npm run eject`
+### What's important
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+You should keep the following things in mind while building the dialog:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Everything should look and feel nice, use the components provided in the repository.
+- Make sure the dialog behaves correctly while loading or when the "backend call" fails.
+- The user input should be validated correctly.
+- Think about what happens before and after the dialog is used.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### How to work with the existing code
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+- You can do pretty much whatever you want, the only thing that's out of bounds is changing the `mock-backend.ts` file.
+- Feel free to add additional dependencies if you think it makes sense.
+- We use the ui components from [shadcn](https://ui.shadcn.com/). You can find them in `src/components/ui`. All components you need are already installed. Their website has a bunch of examples showing how to use the components.
+- For querying and mutating data we use [TanStack Query](https://tanstack.com/query/latest). It too is already installed, please use it.
