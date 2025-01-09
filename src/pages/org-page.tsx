@@ -21,7 +21,13 @@ function InviteUserButton (props: { user: User }) {
     return <>
         <ConfirmationDialog
             title={"Send email invite?"}
-            body={<p>Do you want to send an email invite to {props.user.name}?</p>}
+            body={
+                <p>
+                    Do you want to send an email invite to {props.user.name}?
+                    <br />
+                    <span className={"text-sm text-muted-foreground"}>(this doesn't actually send an email)</span>
+                </p>
+            }
             onConfirm={() => inviteMutation.mutate(props.user.id)}
         >
             <DialogTrigger asChild>

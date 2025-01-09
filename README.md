@@ -23,6 +23,8 @@ At the top, there's a navigation bar that allows you to navigate the two pages, 
 
 ### Your task
 
+Start by running the application and familiarizing yourself with it.
+
 On the organisation page, there is a button that says "Add Member", currently nothing happens when you click it but your job is to implement the dialog window that opens when the button is clicked.
 
 You can find a rudimentary ticket describing what's needed on this page: [https://tekkr.notion.site/hiring-challenge-ticket](https://tekkr.notion.site/hiring-challenge-ticket)

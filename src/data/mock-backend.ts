@@ -41,7 +41,7 @@ export class ApiClient {
         this.org.users.find(u => u.id === userId)!.hasAccount = true;
         this.persist();
     }
-    async createNewUser(userInput: {
+    async createUser(userInput: {
         name: string;
         email: string;
         title?: string;
