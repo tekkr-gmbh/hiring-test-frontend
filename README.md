@@ -24,7 +24,7 @@ At the top, there's a navigation bar that allows you to navigate the two pages, 
 
 On the organisation page, there is a button that says "Add Member", currently nothing happens when you click it but your job is to implement the dialog window that opens when the button is clicked.
 
-You can find the todo-list item describing what's needed on this page: [https://tekkr.notion.site/hiring-challenge-ticket?pvs=4](https://tekkr.notion.site/hiring-challenge-ticket?pvs=4)
+You can find a rudimentary ticket describing what's needed on this page: [https://tekkr.notion.site/hiring-challenge-ticket](https://tekkr.notion.site/hiring-challenge-ticket)
 
 The "backend" for creating users already exists.
 There is a singleton called `apiClient` that has a function called `createUser` - use this function to create the member when the *Save* button is pressed.
