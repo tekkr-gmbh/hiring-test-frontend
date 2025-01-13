@@ -66,7 +66,7 @@ function UserRow({ user }: { user: User }) {
 }
 
 export function OrgPage () {
-    const { org, refetchOrg } = useOrg();
+    const { org } = useOrg();
 
     if (!org) {
         return <div className={"flex flex-col items-center pt-16 gap-3 opacity-65"}>
@@ -86,14 +86,10 @@ export function OrgPage () {
             <hr className={"my-4 zoom-in-line"}/>
             <div className={"flex flex-row items-center gap-4 slide-in-bottom-variant-1"}>
                 <h3>Members</h3>
-                <Dialog>
-                    <DialogTrigger asChild>
-                        <Button size={"sm"} className={"slide-in-from-left-1"}>
-                            <UserPlus className={"w-5 h-5"}/>
-                            <span>Add Member</span>
-                        </Button>
-                    </DialogTrigger>
-                </Dialog>
+                <Button size={"sm"} className={"slide-in-from-left-1"}>
+                    <UserPlus className={"w-5 h-5"}/>
+                    <span>Add Member</span>
+                </Button>
             </div>
 
             <Table className={"slide-in-bottom-variant-3"}>
