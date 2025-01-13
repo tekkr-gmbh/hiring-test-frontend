@@ -6,8 +6,9 @@
 
 This repository has everything in place that you need to get started quickly.
 You need to:
-- Have Node.js installed
+- Have Node.js installed (v16 or above)
 - Clone this repository
+- Run `npm install`
 - Run `npm start` - this should launch the application in your browser. (it runs at [http://localhost:3000](http://localhost:3000))
 
 ### The Application

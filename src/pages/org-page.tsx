@@ -1,5 +1,5 @@
 import React from "react";
-import {Dialog, DialogTrigger} from "../components/ui/dialog";
+import {DialogTrigger} from "../components/ui/dialog";
 import {Button} from "../components/ui/button";
 import {Mail, UserPlus, X} from "lucide-react";
 import {Table, TableBody, TableCell, TableHead, TableRow} from "../components/ui/table";
